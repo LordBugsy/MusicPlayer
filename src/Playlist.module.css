@@ -1,0 +1,294 @@
+@keyframes slideRight {
+    to {
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.playlistContainer, .musicInfoContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    backdrop-filter: blur(15px);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playlistContainer {
+    flex-direction: column;
+}
+
+.musicInfoContainer {
+    opacity: 0;
+}
+
+.playlist, .musicInfo {
+    background-color: rgb(85, 83, 83);
+    width: 440px;
+    height: 650px;
+    position: absolute;
+    color: white;
+    border-radius: 8px;
+    border: 3px solid transparent;
+    box-shadow: 0 5px 4px rgb(58, 58, 58);
+}
+
+.musicInfo {
+    display: flex;
+    
+}
+
+.playlist {
+    width: 800px;
+    height: 420px;
+    overflow-y: scroll;
+    scrollbar-color: rgb(54, 54, 54) transparent;
+    position: relative;
+}
+
+.card {
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 95%;
+    background-color: rgb(95, 123, 141);
+    margin: 15px auto;
+    border-radius: 5px;
+    height: 120px;
+    border: 3px solid transparent;
+}
+
+.logo {
+    user-select: none;
+    font-size: 3.5em;
+    margin-bottom: 5px;
+    color: white;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    -webkit-text-stroke: 2px transparent;
+}
+
+.logo:hover {
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+}
+
+.card:hover {
+    border: 3px solid white;
+}
+
+.icon {
+    margin-left: 20px;
+    justify-content: flex-start;
+    background-color: gray;
+    font-size: 4em;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.name {
+    flex-grow: 1;
+}
+
+.slideRight {
+    animation: slideRight 0.7s ease-in-out both;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.button {
+    background-color: black;
+    color: white;
+    font-size: 2em;
+    border: none;
+    cursor: pointer;
+    padding: 10px 25px;
+    border-radius: 7px;
+}
+
+.add {
+    background-color: rgb(76, 199, 76);
+}
+
+.add:hover {
+    background-color: rgb(22, 160, 22);
+}
+
+/* MusicInfo.jsx */
+
+.musicInfo {
+    width: 600px;
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.musicIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 3em;
+    margin: auto;
+    margin-left: 20px;
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-right: 20px;
+}
+
+.stop {
+    background-color: rgb(214, 81, 81);
+}
+
+.stop:hover {
+    background-color: red;
+}
+
+.play {
+    background-color: rgb(70, 199, 70);
+}
+
+.play:hover {
+    background-color: rgb(18, 167, 18);
+}
+
+.spaceBetween {
+    display: flex;
+    flex-direction: column;
+}
+
+.rowStyle {
+    display: flex;
+    flex-direction: column;
+}
+
+.musicName {
+    font-size: 1.5em;
+    margin-bottom: -5px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.trueRepeat, .falseRepeat {
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.trueRepeat {
+    color: rgb(48, 122, 207);
+}
+
+.fadeIn {
+    animation: fadeIn 0.3s ease-in-out both;
+}
+
+.fadeOut {
+    animation: fadeOut 0.3s ease-in-out both;
+}
+
+.progressBarContainer {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 10px;
+    margin-top: 10px;
+}
+
+.progressBar {
+    height: 100%;
+    background-color: #3b82f6;
+    width: 0%;
+    transition: width 0.2s;
+}
+
+.volumeControl {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.volumeControl label {
+    margin-right: 10px;
+}
+
+.volumeControl input[type="range"] {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #e0e0e0;
+    height: 5px;
+    border-radius: 5px;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.volumeControl input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #3b82f6;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.volumeControl input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #3b82f6;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
