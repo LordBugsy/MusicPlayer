@@ -1,6 +1,6 @@
 # MusicPlayer [UNFINISHED]
 
-(![image](https://github.com/user-attachments/assets/e0d223e4-3057-4219-bdc7-d1143a4af4c1)
+![image](https://github.com/user-attachments/assets/e0d223e4-3057-4219-bdc7-d1143a4af4c1)
 
 
 ## Description
